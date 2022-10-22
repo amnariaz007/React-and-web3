@@ -27,7 +27,17 @@ async function signMessage() {
     // connect and get metamask account
     const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
-   const hashedMessage = "0xf1cc5893f51d011c59874d7871adda6e4e1fd5dac4ec02c3a17527369cdc3233";
+    // message to sign
+    const message = "dailymilk";
+    const NFID = "1234567890123456";
+    const deadline = "1666672659";
+    var concatHash = message + NFID + deadline;
+    console.log({ concatHash });
+
+    // hash message
+    const hashedMessage = Web3.utils.sha3(concatHash);
+    console.log({ hashedMessage });
+
     // sign hashed message
     const signature = await ethereum.request({
       method: "personal_sign",
