@@ -2,7 +2,8 @@ const Web3 = require('web3');
 const Tx = require('ethereumjs-tx').Transaction;
 
 
-const rpcURL = "https://goerli.infura.io/v3/07b0f2fe4e234ceea0ff428f0d25326e";
+//const rpcURL = "https://goerli.infura.io/v3/07b0f2fe4e234ceea0ff428f0d25326e";
+const rpcURL = "http://44.204.237.34:9934";
 const web3 = new Web3(rpcURL);
 
 
@@ -27,7 +28,7 @@ async function signMessage() {
     // connect and get metamask account
     const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
-   const hashedMessage = "0xf1cc5893f51d011c59874d7871adda6e4e1fd5dac4ec02c3a17527369cdc3233";
+   const hashedMessage = "0x04b285c129272f8062036dc5c747a95c9b90581c5b4eaaa205b0cbc55506df39";
     // sign hashed message
     const signature = await ethereum.request({
       method: "personal_sign",
