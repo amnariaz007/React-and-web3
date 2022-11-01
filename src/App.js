@@ -28,7 +28,7 @@ async function signMessage() {
     // connect and get metamask account
     const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
-   const hashedMessage = "0x04b285c129272f8062036dc5c747a95c9b90581c5b4eaaa205b0cbc55506df39";
+   const hashedMessage = "0x4f6b4ad9666f0b1e0bd4c556d28a4220a754426f11ad64ea05eb6c195a7bb4b6"
     // sign hashed message
     const signature = await ethereum.request({
       method: "personal_sign",
