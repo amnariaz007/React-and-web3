@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+ import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     // Check if Metamask is available
     if (typeof window.ethereum !== 'undefined') {
       // Connect to Metamask
-      const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
+      const web3Provider = new ethers.BrowserProvider(window.ethereum);
       setProvider(web3Provider);
     }
   }, []);
